@@ -67,7 +67,10 @@ fun Bmi(viewModel: BmiViewModel) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier.fillMaxWidth()
         )
-        Text(text = stringResource(R.string.result, String.format("%.2f", viewModel.bmi.value).replace(',', '.')))
+        Text(
+            text = "Body mass index is " + String.format("%.2f", viewModel.bmi.value).replace(',', '.')
+        )
+
     }
 }
 
