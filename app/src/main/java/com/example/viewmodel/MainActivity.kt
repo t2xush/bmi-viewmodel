@@ -1,4 +1,5 @@
-// MainActivity.kt
+package com.example.viewmodel// com.example.viewmodel.MainActivity.kt
+import BmiViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,8 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.viewmodel.R
 import com.example.viewmodel.ui.theme.ViewmodelTheme
 
 
@@ -68,9 +67,11 @@ fun Bmi(viewModel: BmiViewModel) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier.fillMaxWidth()
         )
-        Text(text = stringResource(R.string.result,String.format("%.2f",viewModel.bmi).replace(',','.')))
+        Text(text = stringResource(R.string.result, String.format("%.2f", viewModel.bmi.value).replace(',', '.')))
     }
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
